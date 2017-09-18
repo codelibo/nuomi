@@ -30,4 +30,8 @@ return [
         '__dir__'    => ['controller', 'model', 'view'],
         'controller' => ['Register', 'Login'],
     ],
+
+    'home' => [
+        '__dir__' => ['controller', 'view'],
+    ]
 ];
