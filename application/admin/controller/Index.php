@@ -8,4 +8,10 @@ class Index extends Controller
     {
         return $this->fetch();
     }
+
+    public function welcome()
+    {
+//        return $this->fetch();
+        return "欢迎来到o2o主后台首页！";
+    }
 }
