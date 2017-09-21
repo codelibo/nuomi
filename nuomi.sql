@@ -120,7 +120,7 @@ CREATE TABLE `nuomi_deal`(
   `id` int(11) unsigned NOT NULL auto_increment,
   `name` varchar(50) NOT NULL DEFAULT '',
   `category_id` int(11) unsigned NOT NULL DEFAULT 0,
-  `se_category_id` int(11) unsigned NOT NULL DEFAULT 0,
+  `se_category_id` varchar(50) unsigned NOT NULL DEFAULT 0,
   `bis_id` int(11) unsigned NOT NULL DEFAULT 0,
   `location_ids` varchar(100) NOT NULL DEFAULT '',
   `image` varchar(200) NOT NULL DEFAULT '',
