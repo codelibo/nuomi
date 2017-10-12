@@ -21,8 +21,14 @@ class Category extends Controller
     }
 
     public function save() {
-        print_r($_POST);
-        print_r(input('post'));
-        print_r(request()->post());
+//        print_r($_POST);
+//        print_r(input('post.'));die;
+//        print_r(request()->post());
+        $data = input('post.');
+        // 实例化验证器
+        $validate = validate('Category');
+        if (!$validate->scene('add')->check($data)) {
+            $this->error($validate->getError());
+        }
     }
 }
