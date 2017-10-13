@@ -26,4 +26,15 @@ class Category extends Model {
         ];
         return $this->where($data)->order($order)->select();
     }
+
+    public function getFirstCategorys($parent_id = 0) {
+        $data = [
+            'parent_id' => $parent_id,
+            'status'    => ['neq', -1] // != -1
+        ];
+//        $result = $this->where($data)->select();
+        $result = $this->where($data)->paginate(2);
+//        echo $this->getLastSql();
+        return $result;
+    }
 }

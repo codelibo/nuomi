@@ -14,9 +14,15 @@ class Category extends Controller
     public function _initialize() {
         $this->cate = model("Category");
     }
+
+    // 分类列表页
     public function index()
     {
-        return $this->fetch();
+        $parent_id = input("get.parent_id", 0, "intval");
+        $categorys = $this->cate->getFirstCategorys($parent_id);
+        return $this->fetch('', [
+            'categorys' => $categorys
+        ]);
     }
 
     public function add()
