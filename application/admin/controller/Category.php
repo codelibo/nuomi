@@ -10,6 +10,10 @@ use think\Controller;
 
 class Category extends Controller
 {
+    private $cate;
+    public function _initialize() {
+        $this->cate = model("Category");
+    }
     public function index()
     {
         return $this->fetch();
@@ -17,7 +21,11 @@ class Category extends Controller
 
     public function add()
     {
-        return $this->fetch();
+        $categorys = $this->cate->getNormalFirstCategory();
+
+        return $this->fetch('', [
+            'categorys' => $categorys
+        ]);
     }
 
     public function save() {
@@ -30,5 +38,13 @@ class Category extends Controller
         if (!$validate->scene('add')->check($data)) {
             $this->error($validate->getError());
         }
+        // 把$data提交到model层
+        $res = $this->cate->add($data);
+        if ($res) {
+            $this->success("新增成功");
+        } else {
+            $this->error("新增失败");
+        }
+
     }
 }
