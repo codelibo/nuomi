@@ -33,7 +33,7 @@ class Category extends Model {
             'status'    => ['neq', -1] // != -1
         ];
 //        $result = $this->where($data)->select();
-        $result = $this->where($data)->paginate(2);
+        $result = $this->where($data)->paginate();
 //        echo $this->getLastSql();
         return $result;
     }

@@ -51,6 +51,18 @@ class Category extends Controller
         } else {
             $this->error("新增失败");
         }
+    }
 
+    public function edit($id = 0) {
+//        echo $id;
+        if (intval($id) < 0) {
+            $this->error('参数不合法');
+        }
+        $category = $this->cate->get($id);
+        $categorys = $this->cate->getNormalFirstCategory();
+        return $this->fetch('', [
+            'categorys' => $categorys,
+            'category'  => $category
+        ]);
     }
 }
