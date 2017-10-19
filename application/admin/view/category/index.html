@@ -27,7 +27,7 @@
                 <td><input name="" type="checkbox" value=""></td>
                 <td>{$vo.id}</td>
                 <td>{$vo.name}</td>
-                <td class="text-c">{$vo.listorder}</td>
+                <td class="text-c listorder"><input size="3" attr-id="{$vo.id}" name="listorder" value="{$vo.listorder}" /></td>
                 <td>{$vo.create_time|strtotime|date="y-m-d h:i", ###}</td>
                 <td class="td-status"><a href="" title="点击修改状态"></a>{$vo.status|status}</td>
                 <td class="td-manage">
@@ -44,5 +44,10 @@
 <div class="cl pd-5 bg-1 bk-gray mt-20 tp5-nuomi">{$categorys->render()}</div>
 <!--包含footer文件-->
 {include file="public/footer" /}
+<script>
+    var SCOPE = {
+        'listorder_url': "{:url('category/listorder')}",
+    };
+</script>
 </body>
 </html>

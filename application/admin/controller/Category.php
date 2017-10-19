@@ -80,4 +80,13 @@ class Category extends Controller
             $this->error("更新失败");
         }
     }
+
+    public function listorder($id, $listorder) {
+        $res = $this->cate->save(['listorder' => $listorder], ['id' => $id]);
+        if ($res) {
+            $this->result($_SERVER['HTTP_REFERER'], 1, '更新成功');
+        } else {
+            $this->result($_SERVER['HTTP_REFERER'], 0, '更新失败');
+        }
+    }
 }

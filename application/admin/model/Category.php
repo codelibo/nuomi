@@ -32,8 +32,14 @@ class Category extends Model {
             'parent_id' => $parent_id,
             'status'    => ['neq', -1] // != -1
         ];
+        $order = [
+            'id' => 'desc',
+            'listorder' => 'desc'
+        ];
 //        $result = $this->where($data)->select();
-        $result = $this->where($data)->paginate();
+        $result = $this->where($data)
+            ->order($order)
+            ->paginate();
 //        echo $this->getLastSql();
         return $result;
     }

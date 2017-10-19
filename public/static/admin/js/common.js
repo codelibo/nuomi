@@ -19,3 +19,24 @@ function o2o_del(id,url){
         window.location.href=url;
     });
 }
+
+$('.listorder input').blur(function() {
+    // 获取主键id
+    var id = $(this).attr("attr-id");
+    // alert(id);
+    // 获取排序的值
+    var listorder = $(this).val();
+    // alert(listorder);
+    var postData = {
+        'id': id,
+        'listorder': listorder
+    };
+    var url = SCOPE.listorder_url;
+    $.post(url, postData, function(result) {
+        if(result.code == 1) {
+            location.href = result.data;
+        } else {
+            alert(result.msg);
+        }
+    });
+});
