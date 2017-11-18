@@ -34,7 +34,8 @@ class Category extends Validate {
 
     /*场景设置*/
     protected $scene = [
-        'add' => ['name', 'parent_id', 'id'], // 添加时只需要验证name和parent_id字段
+        'add'       => ['name', 'parent_id', 'id'], // 添加时只需要验证name和parent_id字段
         'listorder' => ['id', 'listorder'], // 排序
+        'check'     => ['id', 'status']
     ];
 }

@@ -13,8 +13,7 @@ function o2o_s_edit(title,url,w,h){
     layer_show(title,url,w,h);
 }
 /*-删除*/
-function o2o_del(id,url){
-
+function o2o_del(url){
     layer.confirm('确认要删除吗？',function(index){
         window.location.href=url;
     });
@@ -38,5 +37,5 @@ $('.listorder input').blur(function() {
         } else {
             alert(result.msg);
         }
-    });
+    }, "json");
 });
