@@ -14,4 +14,12 @@ class Index extends Controller
 //        return $this->fetch();
         return "欢迎来到o2o主后台首页！";
     }
+
+    public function test() {
+        return \Map::getLngLat("北京昌平沙河地铁");
+    }
+
+    public function map() {
+        return \Map::staticimage("北京昌平沙河地铁");
+    }
 }
