@@ -7,8 +7,9 @@
  * 发送邮件相关配置
  */
 return [
-    'host' => 'smtp.163.com',
+    // 阿里云邮箱配置
+    'host' => 'smtp.mxhichina.com',
     'port' => 25,
-    'username' => "xxx@163.com",
-    'password' => "xxx",
+    'username' => "xxxx@xxxx",
+    'password' => "xxxxxx",
 ];

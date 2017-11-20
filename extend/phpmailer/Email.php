@@ -15,12 +15,13 @@ class Email {
 //            $mail->SMTPDebug = 2;
             $mail->isSMTP();
             $mail->SMTPAuth = true;
-            $mail->Host = config("email.host");
-            $mail->Port = config("email.port");
             $mail->Username = config("email.username");
             $mail->Password = config("email.password");
-//            $mail->SMTPSecure = 'ssl';
+            $mail->SMTPSecure = 'tls';
+            $mail->Host = config("email.host");
+            $mail->Port = config("email.port");
 
+            $mail->setFrom(config("email.username"), 'liulu');
             $mail->addAddress($to);
             $mail->isHTML(true);
             $mail->Subject = $title;

@@ -11,8 +11,8 @@ class Index extends Controller
 
     public function welcome()
     {
-        \phpmailer\Email::send("813937382@qq.com","title","phpmailer");
-//        return "发送邮件成功";
+        // 测试发送邮件
+        \phpmailer\Email::send("xxxx@qq.com","This is test","Hello，world");
 //        return $this->fetch();
         return "欢迎来到o2o主后台首页！";
     }
